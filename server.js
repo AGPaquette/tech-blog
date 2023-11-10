@@ -8,6 +8,10 @@ const { Sequelize } = require('sequelize');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+});
+
 // Load environment variables (for local development)
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
