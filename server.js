@@ -14,7 +14,8 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 // Use environment variables for database configuration
-const sequelize = new Sequelize(process.env.JAWSDB_URL || process.env.LOCAL_DB_URL, {
+const sequelize = new Sequelize(process.env.DB_NAME || process.env.JAWSDB_URL, process.env.DB_USER, process.env.DB_PASSWORD, {
+  host: process.env.DB_HOST || 'localhost', // You can add a DB_HOST environment variable as well
   dialect: 'mysql',
   logging: false,
 });
@@ -60,4 +61,5 @@ app.listen(PORT, () => {
   // Sync Sequelize models with the database
   sequelize.sync({ force: false });
 });
+
 
