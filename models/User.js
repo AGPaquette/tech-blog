@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const sequelize = require('../config/config');
 
 // Create the User model that extends from Sequelize's Model class
-class User extends Model {
+class Users extends Model {
   // Set up a method to run on instance data (per user) to check the password
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
@@ -11,7 +11,7 @@ class User extends Model {
 }
 
 // Initialize the User model with the specified attributes and configuration
-User.init(
+Users.init(
   {
     // Define the 'id' attribute with INTEGER data type and other constraints
     id: {
@@ -62,4 +62,4 @@ User.init(
 );
 
 // Export the User model for use in other files
-module.exports = User;
+module.exports = Users;
