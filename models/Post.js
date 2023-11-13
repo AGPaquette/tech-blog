@@ -2,10 +2,10 @@ const { Sequelize, Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/config');
 
 // Define the Post model that extends from Sequelize's Model class
-class Post extends Model {}
+class Posts extends Model {}
 
 // Initialize the Post model with the specified attributes and configuration
-Post.init(
+Posts.init(
   {
     // Define the 'title' attribute with a STRING data type
     title: DataTypes.STRING,
@@ -20,4 +20,4 @@ Post.init(
 );
 
 // Export the Post model for use in other files
-module.exports = Post;
+module.exports = Posts;
