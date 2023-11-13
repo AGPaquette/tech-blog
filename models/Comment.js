@@ -2,10 +2,10 @@ const { Sequelize, Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/config');
 
 // Define the Comment model that extends from Sequelize's Model class
-class Comment extends Model {}
+class Comments extends Model {}
 
 // Initialize the Comment model with the specified attributes and configuration
-Comment.init(
+Comments.init(
   {
     // Define the 'body' attribute with a STRING data type and allowNull set to false
     body: {
@@ -20,4 +20,4 @@ Comment.init(
 );
 
 // Export the Comment model for use in other files
-module.exports = Comment;
+module.exports = Comments;
