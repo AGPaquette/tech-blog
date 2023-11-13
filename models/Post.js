@@ -11,7 +11,7 @@ Posts.init(
     title: DataTypes.STRING,
     
     // Define the 'body' attribute with a STRING data type
-    body: DataTypes.TEXT
+    body: DataTypes.STring
   },
   {
     // Pass the sequelize instance for database connection
